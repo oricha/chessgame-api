@@ -14,8 +14,13 @@ public class Knight  extends Piece {
             return false;
         }
 
-        int x = Math.abs(start.getX() - end.getX());
-        int y = Math.abs(start.getY() - end.getY());
-        return x * y == 2;
+        int diffX = Math.abs(start.getX() - end.getX());
+        int diffY = Math.abs(start.getY() - end.getY());
+        return diffX * diffY == 2;
+    }
+
+    @Override
+    public boolean isCastlingMove() {
+        return false;
     }
 }

@@ -1,7 +1,9 @@
 package com.karel.chessserver.domain;
 
 import com.karel.chessserver.domain.pieces.Piece;
+import lombok.Data;
 
+@Data
 public class Spot {
     private Piece piece;
     private int x;
@@ -11,34 +13,5 @@ public class Spot {
         this.setPiece(piece);
         this.setX(x);
         this.setY(y);
-    }
-
-    public Piece getPiece() {
-        return this.piece;
-    }
-
-    public void setPiece(Piece p) {
-        this.piece = p;
-    }
-
-    public int getX() {
-        return this.x;
-    }
-
-    public void setX(int x) {
-        this.x = x;
-    }
-
-    public int getY() {
-        return this.y;
-    }
-
-    public void setY(int y) {
-        this.y = y;
-    }
-
-    public boolean getStart() {
-        //FIXME - implement
-        return false;
     }
 }

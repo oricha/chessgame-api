@@ -25,6 +25,12 @@ public class King extends Piece {
 
         return this.isValidCastling(board, start, end);
     }
+
+    @Override
+    public boolean isCastlingMove() {
+        return true;
+    }
+
     private boolean isValidCastling(Board board, Spot start, Spot end) {
 
         if (this.isCastlingDone()) {

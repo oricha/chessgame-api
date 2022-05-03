@@ -3,6 +3,7 @@ package com.karel.chessserver.domain;
 import com.karel.chessserver.domain.pieces.Piece;
 import lombok.Data;
 
+
 @Data
 public class Move {
     private Player player;
@@ -24,7 +25,7 @@ public class Move {
         return start;
     }
     public Spot getEnd() {
-       return end;
+        return end;
     }
     public void setPieceKilled(Piece destPiece) {
         this.pieceKilled = destPiece;

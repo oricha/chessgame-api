@@ -16,6 +16,10 @@ public class Player {
         this.whiteSide = whiteSide;
         this.humanPlayer = true;
     }
+    public Player() {
+        this.whiteSide = true;
+        this.humanPlayer = false;
+    }
     public boolean isWhiteSide()
     {
         return this.whiteSide;
@@ -25,5 +29,3 @@ public class Player {
         return this.humanPlayer;
     }
 }
-
-

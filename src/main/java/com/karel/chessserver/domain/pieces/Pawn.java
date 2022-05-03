@@ -15,22 +15,17 @@ public class Pawn extends Piece {
     @Override
     public boolean canMove(Board board, Spot start, Spot end) {
 
-        //FIXME: check if the pawn is on the first row
         int diffX = Math.abs(start.getX() - end.getX());
         int diffY = Math.abs(start.getY() - end.getY());
-            if (isFirstMove) {
-                if (diffX == 2) {
-                    return false;
-                } else if (diffX == 1 && diffY == 1) {
-                    return false;
-                }
-            }
+
         if (diffX == 1 && diffY == 1) {
             return false;
         }
-        if (diffX == 0 && diffY == 1) {
-            return true;
-        }
+        return diffX == 0 && diffY == 1;
+    }
+
+    @Override
+    public boolean isCastlingMove() {
         return false;
     }
 

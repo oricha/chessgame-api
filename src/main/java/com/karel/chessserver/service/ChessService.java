@@ -33,6 +33,7 @@ public class ChessService {
             this.currentTurn = p2;
         }
         movesPlayed.clear();
+        this.setStatus(GameStatus.ACTIVE);
     }
 
     public boolean isEnd() {return this.getStatus() != GameStatus.ACTIVE; }
@@ -46,18 +47,17 @@ public class ChessService {
         return this.makeMove(move, player);
     }
 
-    private boolean makeMove(Move move, Player player)
-    {
+    private boolean makeMove(Move move, Player player) throws Exception {
         Piece sourcePiece = move.getStart().getPiece();
 
         if (sourcePiece == null) { return false;}
-        // valid player
+        // is your turn?
         if (player != currentTurn) { return false;}
-
+        // is your piece?
         if (sourcePiece.isWhite() != player.isWhiteSide()) {return false;}
-        // valid move?
-        if (!sourcePiece.canMove(board, move.getStart(), move.getEnd())) { return false;}
-        // kill?
+        // is a valid move?
+        if (!sourcePiece.canMove(board, move.getStart(), move.getEnd())) { return false;} //FIX check movement
+        // marked for death?
         Piece targetPiece = move.getEnd().getPiece();
         if (targetPiece != null) {
             targetPiece.setKilled(true);
@@ -70,7 +70,7 @@ public class ChessService {
         // store the move
         movesPlayed.add(move);
 
-        // move piece from the stat box to end box
+        // move piece from the start box to end box
         move.getEnd().setPiece(move.getStart().getPiece());
         move.getStart().setPiece(null);
 

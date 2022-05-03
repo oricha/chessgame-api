@@ -10,10 +10,17 @@ public class Queen extends Piece {
 
     @Override
     public boolean canMove(Board board, Spot start, Spot end) {
-        //FIXME implement this
+        if (start.getX() == end.getX() && start.getY() == end.getY()) {
+            return false;
+        }
+        if (Math.abs(start.getX() - end.getX()) == Math.abs(start.getY() - end.getY())) {
+            return true;
+        }
+        return start.getX() == end.getX() || start.getY() == end.getY();
+    }
 
-        int x = Math.abs(start.getX() - end.getX());
-        int y = Math.abs(start.getY() - end.getY());
+    @Override
+    public boolean isCastlingMove() {
         return false;
     }
 
