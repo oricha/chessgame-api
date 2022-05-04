@@ -7,7 +7,6 @@ import com.karel.chessserver.domain.pieces.Piece;
 public class Queen extends Piece {
 
     public Queen(boolean white) {super(white);}
-
     @Override
     public boolean canMove(Board board, Spot start, Spot end) {
         if (start.getX() == end.getX() && start.getY() == end.getY()) {

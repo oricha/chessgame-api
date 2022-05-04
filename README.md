@@ -1,10 +1,11 @@
-API Chessgame
+API Chess Game
 =================
 
+AS
 Requirements
 ---------------
 * Java 17 JRE 
-
+* Gradle 2.2
 
 Build the project:
 ---------------

@@ -3,25 +3,28 @@ package com.karel.chessserver.domain.pieces;
 import com.karel.chessserver.domain.Board;
 import com.karel.chessserver.domain.Spot;
 import com.karel.chessserver.domain.pieces.Piece;
+import org.apache.commons.lang3.builder.Diff;
 
 public class Pawn extends Piece {
-    private boolean isFirstMove = true;
 
     public Pawn(boolean white) {
         super(white);
-        isFirstMove = true;
     }
 
     @Override
     public boolean canMove(Board board, Spot start, Spot end) {
 
-        int diffX = Math.abs(start.getX() - end.getX());
-        int diffY = Math.abs(start.getY() - end.getY());
-
-        if (diffX == 1 && diffY == 1) {
-            return false;
+        int xDiff = Math.abs(start.getX() - end.getX());
+        int yDiff = Math.abs(start.getY() - end.getY());
+        int DIFF = 2;
+        if (!board.isFirstMove()){
+            DIFF = 1;
         }
-        return diffX == 0 && diffY == 1;
+        if (xDiff == DIFF && yDiff == DIFF) {
+            return false; // move only in one dimension
+        }
+        return  ((xDiff <= DIFF && yDiff == 0) || (xDiff == 0 && yDiff <= DIFF));
+
     }
 
     @Override
@@ -29,7 +32,4 @@ public class Pawn extends Piece {
         return false;
     }
 
-    public boolean isFirstMove() {return isFirstMove;}
-
-    public void setFirstMove(boolean isFirstMove) {this.isFirstMove = isFirstMove;}
 }

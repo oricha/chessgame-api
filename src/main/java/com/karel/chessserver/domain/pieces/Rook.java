@@ -2,7 +2,6 @@ package com.karel.chessserver.domain.pieces;
 
 import com.karel.chessserver.domain.Board;
 import com.karel.chessserver.domain.Spot;
-import com.karel.chessserver.domain.pieces.Piece;
 public class Rook extends Piece {
     public Rook(boolean white) {super(white);}
 
@@ -38,7 +37,5 @@ public class Rook extends Piece {
         return true;
     }
     @Override
-    public boolean isCastlingMove() {
-        return false;
-    }
+    public boolean isCastlingMove() {return false;}
 }

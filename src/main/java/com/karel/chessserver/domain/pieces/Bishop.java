@@ -9,10 +9,10 @@ public class Bishop extends Piece {
 
     @Override
     public boolean canMove(Board board, Spot start, Spot end) throws Exception {
+
         if (start.getX() == end.getX() && start.getY() == end.getY()) {
             return false;
         }
-
         if (Math.abs(start.getX() - end.getX()) != Math.abs(start.getY() - end.getY())) {
             return false;
         }

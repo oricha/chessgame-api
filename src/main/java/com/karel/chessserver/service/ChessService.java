@@ -52,7 +52,7 @@ public class ChessService {
 
         if (sourcePiece == null) { return false;}
         // is your turn?
-        if (player != currentTurn) { return false;}
+        if (!currentTurn.equals(player)) { return false;}
         // is your piece?
         if (sourcePiece.isWhite() != player.isWhiteSide()) {return false;}
         // is a valid move?

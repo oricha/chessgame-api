@@ -7,6 +7,9 @@ import lombok.Data;
 public class Board {
 
     Spot[][] boxes;
+
+    private boolean isFirstMove = true;
+    private int countMovement = 0;
     public Board() {
         boxes = new Spot[8][8];
         this.resetBoard();
@@ -49,5 +52,36 @@ public class Board {
                 boxes[i][j] = new Spot(i, j, null);
             }
         }
+        isFirstMove = true;
+        countMovement = 0;
+    }
+    public boolean isFirstMove() {
+
+        switch (countMovement) {
+            case 0, 1 -> {
+                countMovement++;
+                isFirstMove = true;
+            }
+            default -> isFirstMove = false;
+        }
+        return isFirstMove;
+    }
+
+    public void setFirstMove(boolean isFirstMove) {this.isFirstMove = isFirstMove;}
+
+    public boolean removePiece(int x, int y) {
+        if (x < 0 || x > 7 || y < 0 || y > 7) {
+            return false;
+        }
+        boxes[x][y].setPiece(null);
+        return true;
+    }
+
+    public boolean addPiece(int x, int y, Piece piece) {
+        if (x < 0 || x > 7 || y < 0 || y > 7) {
+            return false;
+        }
+        boxes[x][y].setPiece(piece);
+        return true;
     }
 }
