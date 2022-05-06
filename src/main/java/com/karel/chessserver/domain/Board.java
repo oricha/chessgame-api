@@ -35,7 +35,7 @@ public class Board {
             // initialize white Pawns
             boxes[1][i] = new Spot(1, i, new Pawn(true));
             // initialize black Pawns
-            boxes[6][i] = new Spot(6, i, new Rook(false));
+            boxes[6][i] = new Spot(6, i, new Pawn(false));
         }
         // initialize black pieces
         boxes[7][0] = new Spot(7, 0, new Rook(false));
