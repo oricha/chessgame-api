@@ -59,7 +59,7 @@ public class King extends Piece {
     public boolean isCastlingMove(Spot start, Spot end) {
         // check if the starting and
         // ending position are correct
-        return false; //FIXME
+        return false;
     }
 }
 

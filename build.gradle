@@ -53,9 +53,6 @@ dependencyManagement {
 	}
 }
 
-tasks.named('test') {
-	useJUnitPlatform()
-}
 test {
 	useJUnitPlatform()
 	maxHeapSize = '1G'

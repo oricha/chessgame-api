@@ -17,7 +17,7 @@ public class Board {
     public Spot getBox(int x, int y) throws Exception {
 
         if (x < 0 || x > 7 || y < 0 || y > 7) {
-            throw new Exception("Index out of bound");
+            throw new Exception("Movement not available");
         }
         return boxes[x][y];
     }
@@ -35,7 +35,7 @@ public class Board {
             // initialize white Pawns
             boxes[1][i] = new Spot(1, i, new Pawn(true));
             // initialize black Pawns
-            boxes[6][i] = new Spot(6, i, new Rook(false));
+            boxes[6][i] = new Spot(6, i, new Pawn(false));
         }
         // initialize black pieces
         boxes[7][0] = new Spot(7, 0, new Rook(false));
