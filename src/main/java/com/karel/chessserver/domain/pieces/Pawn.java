@@ -2,9 +2,6 @@ package com.karel.chessserver.domain.pieces;
 
 import com.karel.chessserver.domain.Board;
 import com.karel.chessserver.domain.Spot;
-import com.karel.chessserver.domain.pieces.Piece;
-import org.apache.commons.lang3.builder.Diff;
-
 public class Pawn extends Piece {
 
     public Pawn(boolean white) {

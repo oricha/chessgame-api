@@ -2,16 +2,18 @@ API Chess Game
 =================
 
 AS
-Requirements
----------------
+
+### Requirements
 * Java 17 JRE 
 * Gradle 2.2
 
-Build the project:
----------------
-``./gradlew build``
+###  Build the project:
+``./gradle build``
 
+### Run the tests:
+``./gradle test``
 
+Access to the tests report in the folder: ``../build/reports/tests/test/index.html``
 ### Entry Points
 
 | URI               | Methode | Usage                        

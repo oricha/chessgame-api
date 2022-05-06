@@ -43,6 +43,8 @@ public class ChessService {
     public void setStatus(GameStatus status) {this.status = status;}
 
     public boolean playerMove(Player player, Spot startBox,  Spot endBox) throws Exception {
+        startBox =  board.getBox(startBox.getX(), startBox.getY());
+        endBox  = board.getBox(endBox.getX(), endBox.getY());
         Move move = new Move(player, startBox, endBox);
         return this.makeMove(move, player);
     }
