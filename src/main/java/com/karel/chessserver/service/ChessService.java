@@ -154,7 +154,6 @@ public class ChessService {
         boolean whiteOrBlack = currentTurn.isWhiteSide();
         //Find the opposite King
         Spot position = findKing( !whiteOrBlack);
-        //FIXME: This is not working
         //Check is king can move
         return false;
     }
