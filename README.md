@@ -6,6 +6,7 @@ API Chess Game is an API server that manages a chess game. You can play 2 player
 - The game start when you call first the ``/start`` endpoint.
 - The active player will send in a payload the initial and final position of the move.
 - The game will be ended when one of the players return the status ``BLACK_WIN, WHITE_WIN, FORFEIT, STALEMATE``
+- Incomplete function will be marked as ``//FIXME``
 - Postman file with sample requests  on  ``/swagger/ChessGame.postman_collection.json``
 ### Requirements
 * Java 17 JRE 
